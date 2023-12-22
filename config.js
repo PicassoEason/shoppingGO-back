@@ -1,7 +1,8 @@
+const firebase = require("firebase");
 const firebaseConfig = {
     apiKey: "AIzaSyAlgWEIvBw44j0PoaEZb0dyMkco1lDSWsg",
     authDomain: "who-animal.firebaseapp.com",
-    databaseURL: "https://who-animal-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    databaseURL: "https://who-animal-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "who-animal",
     storageBucket: "who-animal.appspot.com",
     messagingSenderId: "1093432018176",
@@ -9,6 +10,6 @@ const firebaseConfig = {
     measurementId: "G-DTGVM7LWZE"
   };
   
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+module.exports = db;
